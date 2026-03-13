@@ -6,7 +6,7 @@ NTU 2026 Sem 2.
 
 ## Informortion
 - Contributor: Allen, Hung
-<<<<<<< HEAD
+
 =======
 
 ---
