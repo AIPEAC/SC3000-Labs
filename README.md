@@ -5,11 +5,11 @@ NTU 2026 Sem 2.
 ---
 
 ## Informortion
-- Contributor: Allen, Hung
-
+- Contributor: 
+  - Allen
 ---
 
-## Task 2.2 — Monte Carlo Q-Learning
+## Lab 1 Task 2.2 — Monte Carlo Q-Learning
 - Author: Allen
 
 ### Standard Method
@@ -43,7 +43,12 @@ The standard cumulative method introduces two problems:
 
 To address both issues, I further improved the solution to average only over the **most recent 1000 returns**:
 
-$$Q^{\pi_k} = \left\{\begin{array}{ll} \dfrac{1}{k}\displaystyle\sum_{i=1}^{k}G_i & k \leq 1000 \\ \dfrac{1}{1000}\displaystyle\sum_{i=k-1000}^{k}G_i & k > 1000 \end{array}\right.$$
+$$
+Q^{\pi_k} = \begin{cases}
+\dfrac{1}{k}\sum_{i=1}^{k}G_i & \text{if } k \leq 1000 \\
+\dfrac{1}{1000}\sum_{i=k-1000}^{k}G_i & \text{if } k > 1000
+\end{cases}
+$$
 
 A similar algorithmic idea can be found in other agent-related papers (Mnih et al., 2013).
 
@@ -56,4 +61,3 @@ This solution is stored in [`./Lab1/part2/task2-2-v2`](./Lab1/part2/task2-2-v2).
 Sutton, R. S., & Barto, A. G. (2018). *Reinforcement learning: An introduction* (2nd ed.). MIT Press. http://incompleteideas.net/book/the-book-2nd.html
 
 Mnih, V., Kavukcuoglu, K., Silver, D., Graves, A., Antonoglou, I., Wierstra, D., & Riedmiller, M. (2013). Playing Atari with deep reinforcement learning. *arXiv*. https://arxiv.org/abs/1312.5602
->>>>>>> a653fde (docs(readme): fix LaTeX formatting for improved method)
